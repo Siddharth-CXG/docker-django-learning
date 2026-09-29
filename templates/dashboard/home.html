@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Energy Dashboard{% endblock %}
+
+{% block content %}
+    <section class="welcome" aria-labelledby="page-title">
+        <p class="eyebrow">Energy operations</p>
+        <h1 id="page-title">Energy Dashboard</h1>
+        <p class="intro">A simple overview of example renewable energy assets and their current status.</p>
+    </section>
+
+    <section class="stat-grid" aria-label="Energy statistics">
+        {% for statistic in statistics %}
+            <article class="stat-item">
+                <h2>{{ statistic.label }}</h2>
+                <p class="stat-value">{{ statistic.value }}</p>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

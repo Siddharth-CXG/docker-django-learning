@@ -1,0 +1,27 @@
+# Python bytecode and environments
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+
+# Local configuration and data
+.env
+.env.*
+!.env.example
+data/
+*.sqlite3
+*.db
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp

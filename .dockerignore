@@ -1,0 +1,23 @@
+# Keep repository metadata, developer secrets, and generated data out of images.
+.git/
+.github/
+.specify/
+specs/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+env/
+data/
+*.sqlite3
+*.db
+*.log
+coverage/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

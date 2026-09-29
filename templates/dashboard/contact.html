@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact | Energy Dashboard{% endblock %}
+
+{% block content %}
+    <section class="page-heading">
+        <p class="eyebrow">Get in touch</p>
+        <h1>Contact</h1>
+    </section>
+
+    {% if submitted %}
+        <p class="confirmation" role="status">Your message has been saved. Thank you for getting in touch.</p>
+    {% endif %}
+
+    <form class="contact-form" method="post" novalidate>
+        {% csrf_token %}
+        <div class="form-field">
+            <label for="{{ form.name.id_for_label }}">Name</label>
+            {{ form.name }}
+            {% for error in form.name.errors %}<p class="field-error">{{ error }}</p>{% endfor %}
+        </div>
+        <div class="form-field">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+            {% for error in form.email.errors %}<p class="field-error">{{ error }}</p>{% endfor %}
+        </div>
+        <div class="form-field">
+            <label for="{{ form.message.id_for_label }}">Message</label>
+            {{ form.message }}
+            {% for error in form.message.errors %}<p class="field-error">{{ error }}</p>{% endfor %}
+        </div>
+        <button type="submit">Send message</button>
+    </form>
+{% endblock %}

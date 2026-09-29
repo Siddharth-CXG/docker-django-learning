@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Assets | Energy Dashboard{% endblock %}
+
+{% block content %}
+    <section class="page-heading">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Energy Assets</h1>
+    </section>
+
+    <div class="asset-list" role="list">
+        {% for asset in assets %}
+            <article class="asset-row" role="listitem">
+                <h2>{{ asset.name }}</h2>
+                <p>{{ asset.type }}</p>
+                <p class="asset-status">{{ asset.status }}</p>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}
